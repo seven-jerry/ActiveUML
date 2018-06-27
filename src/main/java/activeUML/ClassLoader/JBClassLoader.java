@@ -32,9 +32,11 @@ public class JBClassLoader {
 	    }
 	    return JBClassLoader.instance;
 	}
+
 	public List<Component> getUMLComponents(){
 		return this.components;
 	}
+
 	public void rewrite(String packageClass)  {
 		try {
 			 ClassPool pool = ClassPool.getDefault();
@@ -61,13 +63,16 @@ public class JBClassLoader {
 			  umlComponent.buildUMLContent();
 			  this.components.add(umlComponent);
 			  this.addCallbackHook(clazz);
-			//TO-DO  clazz.toClass();
+			 clazz.toClass();
 		}
 		catch (NotFoundException e){
 			e.printStackTrace();
 		}
 		catch(CannotCompileException e) {
-			//TO-DO e.printStackTrace();
+			e.printStackTrace();
+		}
+		catch (Exception e){
+			e.printStackTrace();
 		}
 	}
 	

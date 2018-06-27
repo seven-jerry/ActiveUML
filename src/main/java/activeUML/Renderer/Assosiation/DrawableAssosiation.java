@@ -3,16 +3,16 @@ package activeUML.Renderer.Assosiation;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 
-import activeUML.Converter.AssosiationType;
+import activeUML.Converter.AssociationType;
 import activeUML.Renderer.IDrawableAssosiationPoint;
 
 public abstract class DrawableAssosiation {
 	protected IDrawableAssosiationPoint startPoint;
 	protected IDrawableAssosiationPoint endPoint;
 
-	public static DrawableAssosiation fromType(AssosiationType type) {
+	public static DrawableAssosiation fromType(AssociationType type) {
 		switch (type) {
-		case DIREKT:
+		case DIRECT:
 			return new DirektAssosiation();
 		case INTERFACE_IMPLEMENTATION:
 			return new InterfaceImplementaionAssosiation();

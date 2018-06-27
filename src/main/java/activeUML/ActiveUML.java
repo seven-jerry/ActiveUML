@@ -50,18 +50,22 @@ public class ActiveUML {
 	public void setPositionStore(IPositionStore positionStore){
 		this.positionStore = positionStore;
 	}
+
+
 	public void execute(){
 		fileLoader.fetchClassFileNames();
 		fileLoader.fetchSourceFileNames();
+
 		ArrayList<String> packageClasses = fileLoader.getPackageEncodedClasses();
-	
 		for(String packageClass : packageClasses){
 			this.classLoader.rewrite(packageClass);
 		}
-		List<UMLDrawableComponent> drawableContet = this.convert();
+		List<UMLDrawableComponent> drawableContent = this.convert();
 		List<Assosiation> componentAssertions = this.converter.getAssosiations();
-		this.draw(drawableContet,componentAssertions);
+		this.draw(drawableContent,componentAssertions);
 	}
+
+
 	public List<UMLDrawableComponent> convert(){
 		List<Component> components = this.classLoader.getUMLComponents();
 		this.converter = new Converter();
@@ -69,6 +73,8 @@ public class ActiveUML {
 		this.converter.convert();
 		return this.converter.getOutput();
 	}
+
+
 	public void draw(List<UMLDrawableComponent> drawableContet,List<Assosiation> componentAssertions){
 		this.positionManager.arrangePosition(drawableContet);
 		
@@ -77,6 +83,7 @@ public class ActiveUML {
 			this.positionStore.changeToStoredPosition(element.getComponentBox(), element.getAssosiationMapableContent());
 			element.buildPosition();
 		}
+
 		this.context.getCanavsPanel().setUserPositionReciever(this.positionStore);
 		this.context.draw(drawableContet,componentAssertions);
 	}

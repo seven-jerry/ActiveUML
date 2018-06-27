@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import activeUML.Converter.Assosiation;
-import activeUML.Converter.AssosiationType;
+import activeUML.Converter.AssociationType;
 import activeUML.Converter.IAssosiationMapable;
 import activeUML.Converter.IAssosiationMapper;
 import activeUML.UMLData.Helper.ComponentName;
@@ -104,14 +104,14 @@ abstract public class Component implements IComponentSetter, IAssosiationMapable
 	protected void addAssosiations() {
 		for (Field field : this.fields) {
 			if (field.isInterface()) {
-				this.addAssoisiation(AssosiationType.INTERFACE_DECLARATION, field.getComponentName().getName());
+				this.addAssoisiation(AssociationType.INTERFACE_DECLARATION, field.getComponentName().getName());
 			} else {
-				this.addAssoisiation(AssosiationType.DIREKT, field.getComponentName().getName());
+				this.addAssoisiation(AssociationType.DIRECT, field.getComponentName().getName());
 			}
 		}
 	}
 
-	protected void addAssoisiation(AssosiationType type, String value) {
+	protected void addAssoisiation(AssociationType type, String value) {
 		Assosiation buildAssosiation = new Assosiation();
 		buildAssosiation.setType(type);
 		buildAssosiation.setComponentString(value);

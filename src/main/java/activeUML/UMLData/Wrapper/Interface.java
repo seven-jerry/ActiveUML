@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import activeUML.Converter.AssosiationType;
+import activeUML.Converter.AssociationType;
 import activeUML.UMLData.Helper.ComponentName;
 import activeUML.UMLData.Helper.Method;
 import activeUML.util.AttributedStringBuilder;
@@ -68,7 +68,7 @@ public class Interface extends Component {
 	protected void addAssosiations() {
 		super.addAssosiations();
 		for (ComponentName iFace : this.interfaces) {
-			this.addAssoisiation(AssosiationType.INHERITANCE, iFace.getName());
+			this.addAssoisiation(AssociationType.INHERITANCE, iFace.getName());
 		}
 	}
 }

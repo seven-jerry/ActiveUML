@@ -17,6 +17,7 @@ activeUML/UMLData/Helper/MethodParameter.class
 activeUML/Renderer/UMLDrawableComponent.class
 test/lifeTest/test.class
 activeUML/UMLData/Helper/ObjectType.class
+activeUML/Converter/AssociationType.class
 activeUML/UMLData/Helper/ArrayDimention.class
 activeUML/UMLData/Helper/IObjectType.class
 activeUML/Renderer/Position/DefaultPositionManager.class
@@ -49,7 +50,6 @@ activeUML/UMLData/Helper/AccessFlag.class
 activeUML/UMLData/Helper/ModifierContainer.class
 activeUML/util/AttributedStringBuilder.class
 activeUML/Converter/IAssosiationMapable.class
-activeUML/Converter/AssosiationType.class
 activeUML/Main.class
 activeUML/Renderer/Assosiation/InterfaceImplementaionAssosiation.class
 activeUML/UMLData/Helper/GenericSigniture.class

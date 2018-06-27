@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import activeUML.Converter.AssosiationType;
+import activeUML.Converter.AssociationType;
 import activeUML.Renderer.RenderConstants;
 import activeUML.UMLData.Helper.ComponentName;
 import activeUML.UMLData.Helper.Method;
@@ -109,19 +109,19 @@ public class Class extends Component {
 
 		super.addAssosiations();
 		if (this.superComponentName != null) {
-			this.addAssoisiation(AssosiationType.INHERITANCE, this.superComponentName.getName());
+			this.addAssoisiation(AssociationType.INHERITANCE, this.superComponentName.getName());
 		}
 		for (Method method : this.methods) {
 			for (MethodParameter paramter : method.getParameters()) {
 				if (paramter.isInterface()) {
-					this.addAssoisiation(AssosiationType.INTERFACE_DECLARATION, paramter.getComponentName().getName());
+					this.addAssoisiation(AssociationType.INTERFACE_DECLARATION, paramter.getComponentName().getName());
 				} else {
-					this.addAssoisiation(AssosiationType.DIREKT, paramter.getComponentName().getName());
+					this.addAssoisiation(AssociationType.DIRECT, paramter.getComponentName().getName());
 				}
 			}
 		}
 		for (ComponentName iFace : this.interfaces) {
-			this.addAssoisiation(AssosiationType.INTERFACE_IMPLEMENTATION, iFace.getName());
+			this.addAssoisiation(AssociationType.INTERFACE_IMPLEMENTATION, iFace.getName());
 		}
 	}
 

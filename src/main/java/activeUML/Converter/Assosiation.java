@@ -2,7 +2,7 @@ package activeUML.Converter;
 
 public class Assosiation {
 	private String componentString;
-	private AssosiationType type;
+	private AssociationType type;
 	private String source;
 	public Assosiation(){
 	}
@@ -12,10 +12,10 @@ public class Assosiation {
 	public void setComponentString(String componentString) {
 		this.componentString = componentString;
 	}
-	public AssosiationType getType() {
+	public AssociationType getType() {
 		return type;
 	}
-	public void setType(AssosiationType type) {
+	public void setType(AssociationType type) {
 		this.type = type;
 	}
 	public String getSource() {

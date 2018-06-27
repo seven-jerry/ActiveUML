@@ -22,10 +22,23 @@ public class GenericSigniture implements IGenericSignitureSetter {
 		this.proccessInputString();
 	}
 	private void proccessInputString(){
-		int startIndex = this.inputString.indexOf("<");
+		if(this.inputString.length() == 0){
+			return;
+		}
+		if(this.inputString.indexOf("<") == -1){
+			return;
+		}
+		int startIndex = this.inputString.indexOf("<");System.out.println(this.inputString);
 		this.inputString = this.inputString.substring(startIndex);
+		System.out.println(this.inputString);
 		String proccessString =  this.inputString.substring(1);
+		System.out.println(proccessString);
+
 		while(proccessString.indexOf(":") > -1){
+			System.out.println("while");
+
+			System.out.println(proccessString);
+
 			int pointIndex = this.inputString.indexOf(":");
 			int semiIndex = this.inputString.indexOf(";");
 			

@@ -1,0 +1,5 @@
+package activeUML.Converter;
+
+public enum AssociationType {
+	DIRECT,INTERFACE_DECLARATION,INTERFACE_IMPLEMENTATION,INHERITANCE
+}

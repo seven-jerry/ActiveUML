@@ -58,8 +58,12 @@ public class Method implements IMethodSetter{
 	}
 	private AttributedString getReturnType(){
 		String returnString = this.returnType.getShortClassName();
-		
+
+		System.out.println(returnString);
 		AttributedString returnUML = new AttributedString(returnString);
+		if(returnString.length() == 0){
+			return returnUML;
+		}
 		returnUML.addAttribute(TextAttribute.SIZE,12,0,returnString.length());
 		returnUML.addAttribute(TextAttribute.WEIGHT,TextAttribute.WEIGHT_SEMIBOLD,0,returnString.length());
 		if(this.returnType.isVoid()){
